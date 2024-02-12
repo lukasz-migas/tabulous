@@ -24,7 +24,10 @@ jobs:
         include:
           - python-version: "3.10"
             platform: ubuntu-latest
-            backend: [pyqt6, pyside6]
+            backend: pyqt6
+          - python-version: "3.10"
+            platform: ubuntu-latest
+            backend: pyside6
 
     steps:
       - name: Cancel Previous Runs
