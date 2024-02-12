@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from qtpy.sip import isdeleted
+from qtpy.compat import isalive
 from ._base import TableComponent
 
 
@@ -38,7 +38,7 @@ class PlotInterface(TableComponent):
 
     def gcw(self):
         """Get current widget."""
-        if self._current_widget is None or isdeleted(self._current_widget):
+        if self._current_widget is None or isalive(self._current_widget):
             self.new_widget()
         return self._current_widget
 
